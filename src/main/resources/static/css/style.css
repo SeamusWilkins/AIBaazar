@@ -1,0 +1,124 @@
+
+body {
+    background: url('https://apps.eui.eu/EUI_API/EVENTSV2/Images/Image?id=8958') no-repeat center center fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+main {
+    flex: 1;
+}
+
+.card {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px 0;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+h2 {
+    color: #555;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.input-centered {
+    text-align: center;
+}
+
+.input-centered .form-control {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-centered .form-control:focus {
+    border-color: #888;
+    box-shadow: none;
+}
+
+.input-centered .btn {
+    max-width: 300px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #aaa;
+    border-radius: 50px;
+    color: #333;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.input-centered .btn:hover,
+.input-centered .btn:focus {
+    background-color: #f7f7f7;
+    color: #222;
+}
+
+.btn-primary {
+    background-color: #aaa;
+    border-color: #aaa;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: #888;
+    border-color: #888;
+}
+
+
+::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #aaa;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #aaa;
+}
+
+
+input[type="text"]::-webkit-input-caret,
+input[type="password"]::-webkit-input-caret {
+    color: #aaa;
+}
+
+input[type="text"]::-moz-caret,
+input[type="password"]::-moz-caret {
+    color: #aaa;
+}
+
+input[type="text"]:-ms-input-caret,
+input[type="password"]:-ms-input-caret {
+    color: #aaa;
+}
+
