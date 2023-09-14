@@ -15,8 +15,9 @@
                     <p><strong>Description:</strong> <span th:text="${product.description}"></span></p>
                     <p><strong>Trained Price:</strong> <span th:text="${'€' + product.trainedPrice.intValue()}"></span></p>
                     <p><strong>Untrained Price:</strong> <span th:text="${'€' + product.untrainedPrice.intValue()}"></span></p>
-                    <button class="btn btn-success">Buy</button>
-                    <br><button th:if="${session.loggedInAdmin}" th:onclick="'window.location.href=\'/products/delete/' + ${product.id} + '\''" class="btn btn-danger">Delete Product</button>
+                    <a th:if="${!session.loggedInAdmin}" th:href="@{'/products/add-to-cart/trained/' + ${product.id}}" class="btn btn-success mr-2">Buy Trained</a><br>
+                    <a th:if="${!session.loggedInAdmin}" th:href="@{'/products/add-to-cart/untrained/' + ${product.id}}" class="btn btn-warning mr-2">Buy Untrained</a>
+                    <button th:if="${session.loggedInAdmin}" th:onclick="'window.location.href=\'/products/delete/' + ${product.id} + '\''" class="btn btn-danger">Delete Product</button>
                 </div>
             </div>
         </div>
