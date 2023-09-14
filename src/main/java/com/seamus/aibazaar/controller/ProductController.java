@@ -29,6 +29,13 @@ public class ProductController {
         return "product/list";
     }
 
+    @GetMapping("/add")
+    public String addProduct(Model model) {
+        model.addAttribute("product", new Product());
+        model.addAttribute("currentTab", "products");
+        return "product/add";
+    }
+
     @GetMapping("/{id}")
     public String viewProduct(@PathVariable Long id, Model model) {
         Product product = productService.getProductById(id);
@@ -36,5 +43,22 @@ public class ProductController {
         model.addAttribute("product", product);
         return "product/view";
     }
+
+    @PostMapping("/add")
+    public String saveProduct(@ModelAttribute Product product) {
+        productService.saveProduct(product);
+        return "redirect:/products/";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable Long id, Model model) {
+        model.addAttribute("currentTab", "products");
+        if (!Boolean.TRUE.equals(session.getAttribute("loggedInAdmin"))) {
+            return "redirect:/products/";
+        }
+        productService.deleteProduct(id);
+        return "redirect:/products/";
+    }
+
 
 }

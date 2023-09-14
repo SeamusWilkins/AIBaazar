@@ -14,6 +14,31 @@
 
 
                     <h2 class="text-center mb-4">Products</h2>
+                    <button th:if="${session.loggedInAdmin}" class="btn btn-primary" onclick="window.location.href='/products/add'">Add Product</button>
+
+
+
+
+                    <div class="row">
+                        <div th:each="product : ${products}" class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${product.name}"></h5>
+                                    <p class="card-text">
+                                        <strong>Trained Price:</strong> <span th:text="${'€' + product.trainedPrice.intValue()}"></span><br>
+                                        <strong>Untrained Price:</strong> <span th:text="${'€' + product.untrainedPrice.intValue()}"></span>
+                                    </p>
+                                    <div class="d-flex align-items-center">
+                                        <a th:href="@{'/products/' + ${product.id}}" class="btn btn-info mr-2">View</a>
+                                        <button class="btn btn-success">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
 
                 </div>
