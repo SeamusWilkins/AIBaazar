@@ -46,6 +46,12 @@ public class ProductController {
         return "product/add";
     }
 
+    @PostMapping("/add")
+    public String addNewProduct(@ModelAttribute Product product) {
+        productService.saveProduct(product);
+        return "redirect:/products/";
+    }
+
     @GetMapping("/{id}")
     public String viewProduct(@PathVariable Long id, Model model) {
         Product product = productService.getProductById(id);
